@@ -1,16 +1,18 @@
 
-const inputRef = document.querySelector("input");
-const validateRef = document.querySelector('input#validation-input')
-console.log(inputRef);
+
+const validateRef = document.querySelector('#validation-input');
 
 
-inputRef.addEventListener('blur', onInputBlur);
+validateRef.addEventListener('blur', onInputBlur);
 
-function onInputBlur(event) {
-    if (validateRef.value === '6') {
-        inputRef.classList.add('valid');
+function onInputBlur() {
+    if (validateRef.value.length >= validateRef.dataset.length) {
+        validateRef.classList.add('valid');
+        validateRef.classList.remove('invalid');
+       
     }
     else {
-        inputRef.classList.add('invalid');
+        validateRef.classList.add('invalid');
+        validateRef.classList.remove('valid');
     }
 }
