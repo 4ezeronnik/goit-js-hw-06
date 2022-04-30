@@ -10,7 +10,7 @@ createBoxes(inputRef.value));
 
 function createBoxes(amount) {
   let boxsize = 30;
-  for (let i = 0; i <= amount; i ++) {
+  for (let i = 0; i < amount; i += 1) {
     const colorRandom = getRandomHexColor();
     const divCreate = document.createElement('div');
     divCreate.style.width = `${boxsize}px`;
@@ -20,7 +20,8 @@ function createBoxes(amount) {
     boxsize += 10;
   }
 }
-btnDestroyRef.addEventListener('click',destroyBoxes);
+btnDestroyRef.addEventListener('click', destroyBoxes);
+
 function destroyBoxes() {
   divBoxesRef.innerHTML = "";
 }
